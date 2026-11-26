@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crop Yield Prediction Under Climate Change</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>🌾 Crop Yield Prediction Under Climate Change</h1>
+  <p>Wheat yield in Pakistan's districts, predicted from temperature, rainfall and soil moisture</p>
+</header>
+<main>
+  <section class="stats" id="stats"></section>
+
+  <section class="card predictor">
+    <h2>What if the climate changes?</h2>
+    <div class="grid2">
+      <div class="controls">
+        <label>Province <select id="prov"></select></label>
+        <label>Season temperature, Nov–Apr <b id="vTemp"></b><input type="range" id="temp"></label>
+        <label>Season rainfall, Nov–Apr <b id="vRain"></b><input type="range" id="rain"></label>
+        <label>Soil moisture <b id="vSoil"></b><input type="range" id="soil"></label>
+        <label>Year <b id="vYear"></b><input type="range" id="year"></label>
+        <div class="btns">
+          <button data-dt="1">+1 °C</button><button data-dt="2">+2 °C</button>
+          <button data-rf="0.8">−20% rain</button><button data-rf="1.2">+20% rain</button>
+          <button id="reset" class="ghost">Reset</button>
+        </div>
+      </div>
+      <div class="result">
+        <span class="small">Predicted wheat yield</span>
+        <div class="big"><span id="pred">–</span><small> t/ha</small></div>
+        <div id="delta" class="delta"></div>
+        <div class="small" id="avg"></div>
+        <div id="warn" class="warn" hidden>⚠ Outside the climate range seen for this province. Treat this prediction with caution.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card"><h2>Yield history and your prediction</h2><div class="chart"><canvas id="cHist"></canvas></div></section>
+
+  <section class="grid3">
+    <div class="card"><h2>Model comparison (R²)</h2><div class="chart"><canvas id="cModels"></canvas></div></div>
+    <div class="card"><h2>What matters most</h2><div class="chart"><canvas id="cImp"></canvas></div></div>
+    <div class="card"><h2>Test years: actual vs predicted</h2><div class="chart"><canvas id="cTest"></canvas></div></div>
+  </section>
+
+  <section class="card note">
+    <h2>Good to know</h2>
+    <p>The model is XGBoost, trained on 3,591 district-seasons (1981–2024). Scores come from testing on 2016–2024, years it had not seen during training. It explains differences between places and weather well, but tends to <b>under-predict the newest high-yield years</b>, because tree models cannot predict beyond what they have seen. Predictions show patterns in historical data, not guaranteed outcomes. Irrigation, seeds and farming practice also matter.</p>
+  </section>
+</main>
+<footer>Data: Pakistan Bureau of Statistics · ERA5-Land (Copernicus) · GADM boundaries</footer>
+<script src="app.js"></script>
+</body>
+</html>

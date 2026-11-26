@@ -1,0 +1,34 @@
+:root{--g:#1F4D3A;--m:#4C9A6A;--s:#F5F1E8;--a:#E0A030;--t:#2B2B2B;--line:#DDD6C5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--s);color:var(--t);font-family:"Segoe UI",Calibri,system-ui,sans-serif;line-height:1.5}
+header{background:var(--g);color:#fff;padding:36px 20px;text-align:center}
+header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.2rem)}
+header p{margin:0;color:#CFE6D8}
+main{max-width:1100px;margin:0 auto;padding:24px 16px;display:grid;gap:20px}
+h2{margin:0 0 14px;font-size:1.1rem;color:var(--g)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat{background:var(--g);color:#fff;border-radius:14px;padding:16px;text-align:center}
+.stat b{display:block;font-size:1.9rem;color:var(--a)}
+.stat span{font-size:.85rem;color:#CFE6D8}
+.grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.controls{display:grid;gap:14px}
+label{display:grid;gap:4px;font-weight:600;font-size:.92rem}
+label b{color:var(--m);float:right}
+select{padding:8px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff}
+input[type=range]{width:100%;accent-color:var(--m)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{border:0;border-radius:20px;padding:8px 14px;background:var(--m);color:#fff;font-weight:600;cursor:pointer}
+button:hover{background:var(--g)}
+button.ghost{background:#fff;color:var(--g);border:1px solid var(--line)}
+.result{background:var(--s);border-radius:12px;padding:20px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.big{font-size:3.6rem;font-weight:700;color:var(--g);line-height:1.1}
+.big small{font-size:1.1rem;font-weight:400}
+.small{font-size:.85rem;color:#666}
+.delta{font-weight:700}.up{color:var(--m)}.down{color:#C0392B}
+.warn{background:#FFF3D6;border-radius:8px;padding:8px;font-size:.85rem;margin-top:6px}
+.chart{position:relative;height:280px}
+.note p{margin:0}
+footer{text-align:center;padding:20px;color:#777;font-size:.85rem}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.big{font-size:3rem}}

@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+xgboost
+matplotlib
+seaborn
+jupyter
+# Only needed to rebuild the dataset (scripts/build_dataset.py):
+# xarray netCDF4 geopandas pyogrio
