@@ -2,7 +2,7 @@
 
 Machine learning project that predicts **district-level wheat yield in Pakistan** from temperature, rainfall and soil moisture, with an interactive "what if the climate changes?" dashboard.
 
-**Live dashboard:** `https://<your-username>.github.io/crop-yield-prediction/` *(after enabling GitHub Pages, see below)*
+**Live dashboard:** `https://<Llostlife>.github.io/crop-yield-prediction/` *(after enabling GitHub Pages, see below)*
 
 ## Results (test years 2016–2024)
 
